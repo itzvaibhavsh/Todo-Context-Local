@@ -7,7 +7,8 @@ import { TodoForm, TodoItem } from './components/index'
 
 function App() {
   const [todos, setTodos] = useState([])
-  const addTodo = (todo) => {
+  // this add todo is used to change the state by using the object it got from TodoForm.jsx
+  const addTodo = (todo) => {   // as we didn't need to return something, we just needed to update the state, that's why we didn't use return value
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev])  //prev is an array, todo is an object
   }
 
@@ -52,7 +53,7 @@ function App() {
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
             {
-              todos.map((todo) => (
+              todos.map((todo) => (   // map must return a JSX element each time as not reutrning would mean undefined and nothing would be present in UI
                 <div key={todo.id} className="w-full">
                   <TodoItem todo={todo} />
                 </div>

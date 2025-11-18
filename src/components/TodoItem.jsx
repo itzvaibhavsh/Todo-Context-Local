@@ -24,7 +24,7 @@ function TodoItem({ todo }) {
                 type="checkbox"
                 className="cursor-pointer"
                 checked={todo.completed}
-                onChange={toggleCompleted}
+                onChange={toggleCompleted}   // when we click the checkbox, toggleCompleted is called. It calls toggleComplete from context. toggleComplete does its work(mentioned in App.jsx). The toggleComplete from App.jsx then changes the state setTodos, which forces the App to re-render again due to change in its state. So it again runs todoItem loop with the change in value of completed for particular todoItem. Due to this the parent div here and the just next input box shows UI according to the completed value. 
             />
             <input
                 type="text"

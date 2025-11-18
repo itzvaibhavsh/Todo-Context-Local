@@ -10,7 +10,7 @@ function TodoForm() {
 
         if (!todo) return
 
-        addTodo({ todo, completed: false })
+        addTodo({ todo, completed: false }) // this addTodo is taken from UI input, provides the todo object to the addTodo of App.jsx
         setTodo("")
     }
 
